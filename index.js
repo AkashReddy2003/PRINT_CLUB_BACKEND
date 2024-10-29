@@ -1,12 +1,15 @@
 const express = require('express');
 const nodemailer = require('nodemailer');
 const cors = require('cors');
+const fs = require('fs');
 const bodyParser = require('body-parser');
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
 const PORT=3000;
+const htmlTemplate = await readFileAsync('./welcome.html', 'utf-8');
+const imageAttachment = await readFileAsync('./logo.png');
 
 const transporter = nodemailer.createTransport({
     service: "Gmail",
@@ -26,7 +29,13 @@ app.post("/sendwelcome",(req,res)=>{
         from: "printclubworld@gmail.com",
         to: req.body.email,
         subject: req.body.subject,
-        text: req.body.message,
+        html: htmlTemplate,
+        attachments: [{
+            filename: 'image.png',
+            content: imageAttachment,
+            encoding: 'base64',
+            cid: 'logo', // Referenced in the HTML template
+        }],
       };
 
       transporter.sendMail(mailOptions, (error, info) => {
