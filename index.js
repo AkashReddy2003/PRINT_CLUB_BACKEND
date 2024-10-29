@@ -9,7 +9,7 @@ const bodyParser = require('body-parser');
 const app = express();
 
 const corsOptions = {
-  origin: 'https://print-club-launch.vercel.app', // Replace with your frontend origin
+  origin: 'https://printclub.world', // Replace with your frontend origin
   methods: 'GET,POST,OPTIONS',
   allowedHeaders: ['Content-Type'],
 };
@@ -36,7 +36,7 @@ const transporter = nodemailer.createTransport({
   
   
 app.post("/sendwelcome",async(req,res)=>{
-  res.setHeader('Access-Control-Allow-Origin', 'https://print-club-launch.vercel.app');
+  res.setHeader('Access-Control-Allow-Origin', 'https://printclub.world');
   res.setHeader('Access-Control-Allow-Methods', 'GET,POST,OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
