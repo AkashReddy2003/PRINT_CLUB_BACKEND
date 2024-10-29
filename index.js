@@ -7,10 +7,11 @@ const { promisify } = require('util');
 const readFileAsync = promisify(fs.readFile);
 const bodyParser = require('body-parser');
 const app = express();
-app.use(cors({
-  origin: ['http://localhost:5173', 'https://myfrontend.com'], // Replace with your allowed origins
- 
-}));
+app.use(
+  cors({
+    origin: "*",
+  })
+);
 app.use(bodyParser.json());
 
 const PORT=3000;
@@ -27,7 +28,10 @@ const transporter = nodemailer.createTransport({
     },
   });
   
-
+  app.use(function (req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    next();
+  });
 app.post("/sendwelcome",async(req,res)=>{
   res.setHeader('Access-Control-Allow-Origin', 'http://localhost:5173');
   res.setHeader('Access-Control-Allow-Methods', 'POST, GET, OPTIONS');
