@@ -7,7 +7,7 @@ const { promisify } = require('util');
 const readFileAsync = promisify(fs.readFile);
 const bodyParser = require('body-parser');
 const app = express();
-app.use(cors());
+app.use(cors({credentials: true, origin: 'http://localhost:5173'}));
 app.use(bodyParser.json());
 
 const PORT=3000;
