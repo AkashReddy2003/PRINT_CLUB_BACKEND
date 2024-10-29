@@ -9,8 +9,7 @@ const bodyParser = require('body-parser');
 const app = express();
 app.use(cors({
   origin: ['http://localhost:5173', 'https://myfrontend.com'], // Replace with your allowed origins
-  methods: 'GET,POST,PUT,DELETE,OPTIONS',
-  allowedHeaders: 'Content-Type, Authorization'
+ 
 }));
 app.use(bodyParser.json());
 
@@ -30,6 +29,9 @@ const transporter = nodemailer.createTransport({
   
 
 app.post("/sendwelcome",async(req,res)=>{
+  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:5173');
+  res.setHeader('Access-Control-Allow-Methods', 'POST, GET, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
   const htmlTemplate = await readFileAsync('./welcome.html', 'utf-8');
 const imageAttachment = await readFileAsync('./logo.png');
