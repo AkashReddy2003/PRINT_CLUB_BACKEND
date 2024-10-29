@@ -7,10 +7,16 @@ const { promisify } = require('util');
 const readFileAsync = promisify(fs.readFile);
 const bodyParser = require('body-parser');
 const app = express();
+
+const corsOptions = {
+  origin: 'https://print-club-launch.vercel.app', // Replace with your frontend origin
+  methods: 'GET,POST,OPTIONS',
+  allowedHeaders: ['Content-Type'],
+};
+
+
 app.use(
-  cors({
-    origin: "*",
-  })
+  cors(corsOptions)
 );
 app.use(bodyParser.json());
 
