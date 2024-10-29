@@ -34,14 +34,9 @@ const transporter = nodemailer.createTransport({
     },
   });
   
-  app.use(function (req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
-    next();
-  });
+  
 app.post("/sendwelcome",async(req,res)=>{
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'POST, GET, OPTIONS');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+  
 
   const htmlTemplate = await readFileAsync('./welcome.html', 'utf-8');
 const imageAttachment = await readFileAsync('./logo.png');
