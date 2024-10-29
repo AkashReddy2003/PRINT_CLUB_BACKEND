@@ -31,9 +31,9 @@ app.post("/sendwelcome",(req,res)=>{
 
       transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
-          console.error("Error sending email: ", error);
+          console.error("Error sending email");
         } else {
-          console.log("Email sent: ", info.response);
+          console.log("Email sent");
         }
       });
 
