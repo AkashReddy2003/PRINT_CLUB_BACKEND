@@ -36,7 +36,16 @@ const transporter = nodemailer.createTransport({
   
   
 app.post("/sendwelcome",async(req,res)=>{
-  
+  res.setHeader('Access-Control-Allow-Origin', 'https://print-club-launch.vercel.app');
+  res.setHeader('Access-Control-Allow-Methods', 'GET,POST,OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+
+  // Handle preflight requests
+  if (req.method === 'OPTIONS') {
+    res.status(200).end();
+    return;
+  }
+
 
   const htmlTemplate = await readFileAsync('./welcome.html', 'utf-8');
 const imageAttachment = await readFileAsync('./logo.png');
