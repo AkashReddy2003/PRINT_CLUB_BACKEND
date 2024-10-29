@@ -2,6 +2,9 @@ const express = require('express');
 const nodemailer = require('nodemailer');
 const cors = require('cors');
 const fs = require('fs');
+const { promisify } = require('util');
+
+const readFileAsync = promisify(fs.readFile);
 const bodyParser = require('body-parser');
 const app = express();
 app.use(cors());
@@ -23,6 +26,7 @@ const transporter = nodemailer.createTransport({
   
 
 app.post("/sendwelcome",async(req,res)=>{
+
   const htmlTemplate = await readFileAsync('./welcome.html', 'utf-8');
 const imageAttachment = await readFileAsync('./logo.png');
     console.log(req.body.email)
