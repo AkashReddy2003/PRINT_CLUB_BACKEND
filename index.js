@@ -47,8 +47,8 @@ app.post("/sendwelcome",async(req,res)=>{
   }
 
 
-  const htmlTemplate = await readFileAsync('/welcome.html', 'utf-8');
-const imageAttachment = await readFileAsync('/logo.png');
+  const htmlTemplate = await readFileAsync('./welcome.html', 'utf-8');
+const imageAttachment = await readFileAsync('./logo.png');
     console.log(req.body.email)
     const mailOptions = {
         from: "printclubworld@gmail.com",
