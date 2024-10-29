@@ -133,7 +133,7 @@ app.post("/sendwelcome",async(req,res)=>{
 </body>
 </html>
 `
-const imageAttachment = await readFileAsync('logo.png');
+
     console.log(req.body.email)
     const mailOptions = {
         from: "printclubworld@gmail.com",
