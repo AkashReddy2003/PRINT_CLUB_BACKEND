@@ -9,7 +9,7 @@ const bodyParser = require('body-parser');
 const app = express();
 
 const corsOptions = {
-  origin: 'https://printclub.world', // Replace with your frontend origin
+  origin: 'https://www.printclub.world', // Replace with your frontend origin
   methods: 'GET,POST,OPTIONS',
   allowedHeaders: ['Content-Type'],
 };
