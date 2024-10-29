@@ -9,7 +9,7 @@ const bodyParser = require('body-parser');
 const app = express();
 app.use(
   cors({
-    origin: "https://print-club-launch.vercel.app/",
+    origin: "https://print-club-launch.vercel.app",
   })
 );
 app.use(bodyParser.json());
@@ -29,7 +29,7 @@ const transporter = nodemailer.createTransport({
   });
   
   app.use(function (req, res, next) {
-    res.header("Access-Control-Allow-Origin", "https://print-club-launch.vercel.app/");
+    res.header("Access-Control-Allow-Origin", "https://print-club-launch.vercel.app");
     next();
   });
 app.post("/sendwelcome",async(req,res)=>{
