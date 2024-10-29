@@ -133,19 +133,14 @@ app.post("/sendwelcome",async(req,res)=>{
 </body>
 </html>
 `
-const imageAttachment = await readFileAsync('logo.png');
+
     console.log(req.body.email)
     const mailOptions = {
         from: "printclubworld@gmail.com",
         to: req.body.email,
         subject: req.body.subject,
         html: htmlTemplate,
-        attachments: [{
-            filename: 'image.png',
-            content: imageAttachment,
-            encoding: 'base64',
-            cid: 'logo', // Referenced in the HTML template
-        }],
+        
       };
 
       transporter.sendMail(mailOptions, (error, info) => {
