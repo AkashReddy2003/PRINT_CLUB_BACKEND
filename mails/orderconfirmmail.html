@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <title>Welcome to Print Club!</title>
+  <style>
+    body {
+
+      font-family: Montserrat, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #000000;
+    }
+    .email-container {
+      max-width: 600px;
+      margin: auto;
+      background-color: #FFF8E8;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+    .header {
+      text-align: center;
+      padding: 20px;
+      
+      color: #000000;
+      border-radius: 8px 8px 0 0;
+    }
+    .header h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+    .content {
+      padding: 20px;
+      text-align: center;
+    }
+    .content p {
+      color: #333;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+    .cta-button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 15px 30px;
+      background-color: #ff5733;
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 5px;
+    }
+    .footer {
+      margin-top: 20px;
+      text-align: center;
+      color: #888;
+      font-size: 12px;
+    }
+    .footer a {
+      color: #888;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="email-container">
+    <div class="header">
+        <img src="cid:logo" style="height: 200px;"/>
+        <h2>Thank you for your purchase!</h2>
+        <p>Hi {cid:name},</p>
+        <p>We’re excited to let you know that we’ve received your order and are preparing it for shipment. Below are your order details:</p>
+
+        <table class="order-details">
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>[Item Name 1]</td>
+                    <td>1</td>
+                    <td>Rs. [Price]</td>
+                </tr>
+                <tr>
+                    <td>[Item Name 2]</td>
+                    <td>2</td>
+                    <td>Rs. [Price]</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table class="summary">
+            <tbody>
+                <tr>
+                    <th>Subtotal</th>
+                    <td>Rs. [Subtotal Amount]</td>
+                </tr>
+                <tr>
+                    <th>Shipping Fee</th>
+                    <td>Rs. [Shipping Fee]</td>
+                </tr>
+                <tr>
+                    <th>Discount</th>
+                    <td>- Rs. [Discount Amount]</td>
+                </tr>
+                <tr>
+                    <th>Total Paid</th>
+                    <td><strong>Rs. [Total Amount]</strong></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p><strong>Delivery Details:</strong></p>
+        <p>
+            Name: [Recipient's Name]<br>
+            Address: [Street Address, City, State, ZIP Code]<br>
+            Estimated Delivery: [Delivery Date]
+        </p>
+
+        <p>If you have any questions, please feel free to reply to this email or contact our support team at [Support Email Address].</p>
+        <p>Thank you for choosing [Your Store Name]. We hope you love your purchase!</p>
+    </div>
+    <div class="footer">
+      <p>© 2024 Print Club </p>
+      
+    </div>
+  </div>
+</body>
+</html>
